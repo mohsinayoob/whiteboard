@@ -3,7 +3,7 @@ version: '3.5'
 services:
   whiteboard:
     build: .
-    container_name: whiteboard
+#     container_name: whiteboard
     volumes:
       - .:/usr/src/app
       
@@ -16,7 +16,7 @@ services:
 
   mongodb:
     image: mongo
-    container_name: whiteboard_mongodb
+#     container_name: whiteboard_mongodb
     volumes:
       - ./data/db:/data/db
 #     network_mode: bridge
