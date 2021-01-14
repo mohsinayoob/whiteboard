@@ -12,11 +12,11 @@ services:
     restart: unless-stopped
     links:
       - mongodb
-    network_mode: bridge
+#     network_mode: bridge
 
   mongodb:
     image: mongo
     container_name: whiteboard_mongodb
     volumes:
       - ./data/db:/data/db
-    network_mode: bridge
+#     network_mode: bridge
