@@ -1,0 +1,9 @@
+.idea/
+bower_components/
+node_modules/
+favicon/
+dist/
+mobile/
+lib/
+public/backup/
+data/
