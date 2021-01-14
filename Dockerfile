@@ -1,11 +1,12 @@
 From node:latest
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 \
-  && echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list \
+RUN sudo apt-get install gnupg \
+    && wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add - \
+  && echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list \
   && apt-get update \
   && apt-get install -y mongodb-org --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+RUN sudo systemctl start mongod
 WORKDIR /usr/src/app
 COPY package.json .
 RUN npm install
