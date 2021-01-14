@@ -1,22 +1,22 @@
-version: '3.5'
+version: '2'
 
 services:
   whiteboard:
 #     build: .
 #     container_name: whiteboard
-    volumes:
-      - .:/usr/src/app
+    # volumes:
+    #   - .:/usr/src/app
       
-#     ports:
-#       - 3000:3000
+    ports:
+      - 3000:3000
 #     restart: unless-stopped
 #     links:
 #       - mongodb
 #     network_mode: bridge
 
-  mongodb:
-    image: mongo
+  # mongodb:
+  #   image: mongo
 #     container_name: whiteboard_mongodb
-    volumes:
-      - ./data/db:/data/db
+    # volumes:
+    #   - ./data/db:/data/db
 #     network_mode: bridge
