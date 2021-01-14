@@ -2,16 +2,16 @@ version: '3.5'
 
 services:
   whiteboard:
-    build: .
+#     build: .
 #     container_name: whiteboard
     volumes:
       - .:/usr/src/app
       
     ports:
       - 3000:3000
-    restart: unless-stopped
-    links:
-      - mongodb
+#     restart: unless-stopped
+#     links:
+#       - mongodb
 #     network_mode: bridge
 
   mongodb:
